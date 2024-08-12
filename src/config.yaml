@@ -1,5 +1,5 @@
 site:
-  name: You Kno You
+  name: You Know You
   site: 'https://astrowind.vercel.app'
   base: '/'
   trailingSlash: false
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: You Kno You
-    template: 'You Kno You'
-  description: 'Take back control of your symptoms and your lifestyle, start tracking today!'
+    default: You Know You
+    template: 'You Know You'
+  description: 'Take back control of your health with easy symptom tracking. Get started for FREE'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: You Kno You
+    site_name: You Know You
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@jhdesign'
+    site: '@jhdesign'
     cardType: summary_large_image
 
 i18n:
@@ -69,4 +69,4 @@ analytics:
       id: null # or "G-XXXXXXXXXX"
 
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'light' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
