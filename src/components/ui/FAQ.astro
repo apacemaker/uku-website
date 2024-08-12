@@ -1,0 +1,65 @@
+---
+import type { CallToAction, ItemGrid as Props } from '~/types';
+import { twMerge } from 'tailwind-merge';
+import Button from './Button.astro';
+import { Icon } from 'astro-icon/components';
+
+const { items = [], defaultIcon = '', classes = {} } = Astro.props;
+
+const {
+  container: containerClass = '',
+  panel: panelClass = '',
+  title: titleClass = '',
+  description: descriptionClass = '',
+  icon: defaultIconClass = 'text-primary',
+  action: actionClass = '',
+} = classes;
+---
+
+<section class={twMerge('max-w-3xl mx-auto p-6', containerClass)}>
+  {
+    items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
+      <details class="group border-b border-gray-200 py-4">
+        {/* Using details/summary for collapsible functionality */}
+        <summary
+          class={twMerge(
+            'flex justify-between items-center cursor-pointer text-lg font-medium',
+            panelClass,
+            itemClasses?.panel
+          )}
+        >
+          <div class="flex items-center">
+            {(icon || defaultIcon) && (
+              <Icon
+                name={icon || defaultIcon}
+                class={twMerge('w-7 h-7 mr-2 rtl:mr-0 rtl:ml-2', defaultIconClass, itemClasses?.icon)}
+              />
+            )}
+            {title && <h3 class={twMerge('', titleClass, itemClasses?.title)}>{title}</h3>}
+          </div>
+          <svg
+            class="w-5 h-5 transition-transform duration-300 group-open:rotate-180"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+          {/* Rotating arrow icon */}
+        </summary>
+        <div class="mt-2 text-gray-600">
+          {/* Description area */}
+          {description && (
+            <p class={twMerge('text-muted', descriptionClass, itemClasses?.description)} set:html={description} />
+          )}
+          {callToAction && (
+            <div class={twMerge('mt-3', actionClass, itemClasses?.actionClass)}>
+              <Button variant="link" {...(callToAction as CallToAction)} />
+            </div>
+          )}
+        </div>
+      </details>
+    ))
+  }
+</section>

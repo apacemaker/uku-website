@@ -132,14 +132,22 @@ export interface Stat {
   icon?: string;
 }
 
-export interface Item {
-  title?: string;
-  description?: string;
+export type Item = {
+  // Ensure that Item has the necessary properties
+  title: string;
+  description: string;
   icon?: string;
-  classes?: Record<string, string>;
-  callToAction?: CallToAction;
-  image?: Image;
-}
+  callToAction?: string;
+  classes?: {
+    panel?: string;
+    title?: string;
+    description?: string;
+    icon?: string;
+    actionClass?: string;
+  };
+};
+
+export type FaqItem = Item;
 
 export interface Price {
   title?: string;
@@ -258,8 +266,39 @@ export interface Faqs extends Omit<Headline, 'classes'>, Widget {
   iconUp?: string;
   iconDown?: string;
   items?: Array<Item>;
-  columns?: number;
 }
+
+export type CategoryItem = {
+  category: string;
+  faqs: FaqItem[];
+};
+
+export type FaqsProps = {
+  title?: string;
+  subtitle?: string;
+  tagline?: string;
+  items: CategoryItem[]; // Items are an array of CategoryItem
+  id?: string;
+  isDark?: boolean;
+  classes?: {
+    container?: string;
+  };
+  bg?: unknown;
+};
+
+export type FaqItem = {
+  title: string;
+  description: string;
+  icon?: string;
+  callToAction?: string;
+  classes?: {
+    panel?: string;
+    title?: string;
+    description?: string;
+    icon?: string;
+    actionClass?: string;
+  };
+};
 
 export interface Steps extends Omit<Headline, 'classes'>, Widget {
   items: Array<{
