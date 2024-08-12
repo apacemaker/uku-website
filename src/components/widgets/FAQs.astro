@@ -22,18 +22,20 @@ const {
   {
     items.map(({ category, faqs }: CategoryItem) => (
       <div class="mb-8">
-        <p class="text-2xl font-bold mb-4">{category}</p>
-        {faqs.length > 0 && ( // Only render the FAQ component if there are FAQs
-          <FAQ
-            items={faqs}
-            defaultIcon="tabler:plus"
-            classes={{
-              container: 'gap-y-8 md:gap-y-12',
-              panel: 'max-w-none',
-              icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
-            }}
-          />
-        )}
+        <div class="max-w-3xl mx-auto p-6">
+          <p class="text-2xl font-bold mb-4">{category}</p>
+          {faqs.length > 0 && (
+            <FAQ
+              items={faqs}
+              defaultIcon="tabler:plus"
+              classes={{
+                container: 'gap-y-8 md:gap-y-12',
+                panel: 'max-w-none',
+                icon: 'flex-shrink-0 mt-1 w-6 h-6 text-primary',
+              }}
+            />
+          )}
+        </div>
       </div>
     ))
   }

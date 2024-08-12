@@ -132,6 +132,7 @@ const metadata = {
       </span>
     </Fragment>
   </AboutSection>
+
   <!-- Steps Widget ****************** -->
 
   <Steps
@@ -253,23 +254,109 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- FAQs Widget ******************* -->
-
+  <!-- FAQs Widget ************** -->
   <FAQs
+    id="faqs"
     title="Frequently Asked Questions"
     items={[
       {
-        category: 'General Questions',
+        category: 'Getting Started',
         faqs: [
-          { title: 'What is your return policy?', description: 'Our return policy lasts 30 days...' },
-          { title: 'How do I track my order?', description: 'You can track your order using the tracking number...' },
+          {
+            title: 'How do I create an account?',
+            description:
+              'To create an account, download the You Know You app from the App Store, open it, and follow the on-screen instructions to sign up with your email address. You can start tracking symptoms immediately after signing up.',
+          },
+          {
+            title: 'How do I log my first symptom?',
+            description:
+              "Tap the 'Add Symptom' button on the Journal screen, name your symptom, choose a color, and hit 'Save.' You can then start logging events with a single tap.",
+          },
+          {
+            title: 'Is the app available for Android?',
+            description:
+              'Currently, You Know You is only available for iOS. We are working on an Android version and will announce it when it is available.',
+          },
         ],
       },
       {
-        category: 'Shipping Information',
+        category: 'Account Management',
         faqs: [
-          { title: 'What shipping options are available?', description: 'We offer several shipping options...' },
-          { title: 'Do you ship internationally?', description: 'Yes, we ship to over 50 countries worldwide...' },
+          {
+            title: 'How do I reset my password?',
+            description:
+              "To reset your password, tap 'Forgot Password' on the login screen, enter your email address, and follow the instructions in the email you receive.",
+          },
+          {
+            title: 'Can I change the email address associated with my account?',
+            description:
+              "Yes, you can update your email address by going to 'Account' > 'Change Email' and entering your new email address.",
+          },
+          {
+            title: 'How do I delete my account?',
+            description:
+              "To delete your account, go to 'Account' > 'Delete Account.' Please note that this action is irreversible, and all your data will be permanently deleted.",
+          },
+        ],
+      },
+      {
+        category: 'App Features',
+        faqs: [
+          {
+            title: 'How do I customize my symptoms?',
+            description:
+              'Long press on any symptom tile to open the details, where you can edit the name and color of the symptom.',
+          },
+          {
+            title: 'What is the heatmap, and how do I use it?',
+            description:
+              "The heatmap provides a visual representation of your symptom events over the month. To use it, go to the Timeline Tab and tap on the current date. This will open a modal with the calendar, showing a heatmap of symptoms based on their frequency. When you tap on a day in the calendar, it will display that day's timeline.",
+          },
+          {
+            title: 'Can I export my symptom data?',
+            description:
+              'Currently, data export is not offered, but we are considering this feature for future updates.',
+          },
+        ],
+      },
+      {
+        category: 'Privacy & Security',
+        faqs: [
+          {
+            title: 'How is my data protected?',
+            description:
+              'Your data is stored securely on our servers in Google Firebase. Please note that we are currently evaluating our compliance with HIPAA regulations, and while data is protected on our servers, it may not be encrypted, and we can currently access the symptoms stored in the Firestore database.',
+          },
+          {
+            title: 'Can I use the app without creating an account?',
+            description:
+              'To fully utilize You Know You, an account is required to save and sync your data across devices.',
+          },
+          {
+            title: 'What happens to my data if I delete the app?',
+            description:
+              'If you delete the app without deleting your account, your data will remain on our servers and can be accessed by re-downloading the app and logging in again.',
+          },
+        ],
+      },
+      {
+        category: 'Troubleshooting',
+        faqs: [
+          {
+            title: 'Why isn’t my symptom logging correctly?',
+            description:
+              'If your symptom isn’t logging correctly, make sure you have a stable internet connection and that the app is updated to the latest version. If the issue persists, try restarting the app or reinstalling it. Provide feedback to our developer team if the problem continues.',
+          },
+          {
+            title: 'The app is running slow. What should I do?',
+            description:
+              'If the app is running slow, close any other apps running in the background and ensure your device has enough storage space. Updating to the latest version of iOS may also help. Provide feedback to our developer team if the problem continues.',
+          },
+          {
+            title: 'I’m not receiving notification reminders. What can I do?',
+            description:
+              'Notifications are not currently offered in the app. If you have suggestions or feedback, contact our team.',
+          },
         ],
       },
     ]}
